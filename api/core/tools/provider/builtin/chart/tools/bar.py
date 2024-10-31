@@ -33,7 +33,8 @@ class BarChartTool(BuiltinTool):
         if axis:
             axis = [label[:10] + "..." if len(label) > 10 else label for label in axis]
             ax.set_xticklabels(axis, rotation=45, ha="right")
-            ax.bar(axis, data)
+            ax.bar(range(len(data)), data)
+            ax.set_xticks(range(len(data)))
         else:
             ax.bar(range(len(data)), data)
 
